@@ -21,6 +21,10 @@ export default function AlbumForm({AddAlbum}){
 
     const handleSubmit =(e) =>{
         e.preventDefault();
+        if(albumName.current.value === ""){
+            alert("Please enter a valid name");
+            return;
+        }
         const albumdata={
             name: albumName.current.value
         }
@@ -32,11 +36,11 @@ export default function AlbumForm({AddAlbum}){
         <>
         <div className="container">
             <div className={toggle?"form-container-toggle":"form-container"}>
-                <form action="submit" onClick={(e)=>handleSubmit(e)}>
+                <form action="submit">
                     <label id="albumname" name="albumname">Create an album</label><br /><br />
-                    <input type='text' placeholder='Album Name...' className='input-album-name' ref={albumName}/>
+                    <input type='text' placeholder='Album Name...' className='input-album-name' ref={albumName} required/>
                     <button id="clear" onClick={clearInput}>Clear</button>
-                    <button id="Create">Create</button>
+                    <button id="Create" onClick={(e)=>handleSubmit(e)}>Create</button>
                 </form>
             </div>
             <div className='Heading-container'>
