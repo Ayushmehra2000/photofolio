@@ -1,21 +1,48 @@
 import './albumform.css'
 
-export default function AlbumForm(){
+import { useState, useRef, useEffect} from 'react';
+
+export default function AlbumForm({AddAlbum}){
+    const [toggle, setToggle] = useState(true);
+    const albumName = useRef(null);
+
+    useEffect(()=>{
+        if(toggle){
+            albumName.current.focus()
+        }
+    },[])
+
+    function handletoggle(){
+        setToggle(!toggle)
+    }
+    function clearInput(){
+        albumName.current.value="";
+    }
+
+    const handleSubmit =(e) =>{
+        e.preventDefault();
+        const albumdata={
+            name: albumName.current.value
+        }
+        AddAlbum(albumdata);
+        clearInput();
+        return;
+    }
     return(
         <>
         <div className="container">
-            <div className='form-container'>
-                <form action="submit">
+            <div className={toggle?"form-container-toggle":"form-container"}>
+                <form action="submit" onClick={(e)=>handleSubmit(e)}>
                     <label id="albumname" name="albumname">Create an album</label><br /><br />
-                    <input type='text' placeholder='Album Name...' className='input-album-name' />
-                    <button id="clear">Clear</button>
+                    <input type='text' placeholder='Album Name...' className='input-album-name' ref={albumName}/>
+                    <button id="clear" onClick={clearInput}>Clear</button>
                     <button id="Create">Create</button>
                 </form>
             </div>
             <div className='Heading-container'>
                 <div className='heading'><h2>Your albums</h2></div>
                 <div className='form-button'>
-                    <button>Add a Album</button>
+                    <button onClick={handletoggle} className={toggle ? "AddToAlbum":"Cancel"}>{toggle ?"Add a Album" : "Cancel"}</button>
                 </div>
             </div>
         </div>
