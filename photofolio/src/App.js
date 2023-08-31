@@ -29,6 +29,7 @@ function App() {
   useEffect(()=>{
     getDataofFolders();
   },[]);
+  
   const handleAddAlbum = async (Albumdata)=>{
     const docRef = await addDoc(collection(db, "folders"), Albumdata);
     setAlbums([{id:docRef.id,...Albumdata},...albums]);
@@ -36,7 +37,7 @@ function App() {
 
   const handleFolderRemove = async (id) => {
     await deleteDoc(doc(db, "folders", id));
-    const updatefolder=albums.filter((data)=> data.id != id);
+    const updatefolder=albums.filter((data)=> data.id !== id);
     setAlbums(updatefolder)
   }
   return (
