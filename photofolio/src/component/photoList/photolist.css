@@ -1,0 +1,129 @@
+/* form Css starts from here  */
+#Photo-form-container{
+    display: flex;
+    width: 75%;
+    margin: 10px auto;
+    background-color: aquamarine;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+#Photo-form-container-2{
+    display: none;
+}
+.photo-form{
+    margin:0px auto;
+}
+.photo-form input{
+    width:30rem !important ;
+    height: 30px;
+    margin: 5px auto;
+    padding: 0px 15px;
+    border-radius: 25px;
+    border: none;
+}
+.photo-form button{
+    width :7em!important;
+    height: 28px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+}
+.clear-image-input{
+    background-color: red;
+    color: aliceblue;
+}
+.submit-image-input{
+    background-color: blue;
+    color: aliceblue;
+}
+
+
+
+/* PhotoList Header  */
+.photolist-container{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 5px auto;
+}
+.back-button{
+    width:40px;
+    height: 40px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+.back-button img{
+    width:30px;
+    height: 30px;
+}
+.photolist-container div button{
+    margin-top: 2px;
+    width: 100px;
+    height: 30px;
+    font-size: medium;
+    color: rgb(0, 0, 0);
+}
+
+
+
+/* imagesList Starts from here  */
+#imagelist-container{
+    width: 95vw;
+    margin: 0px auto;
+}
+#imagelist-container ul{
+    width: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+#imagelist-container ul li {
+    display: inline-block;
+    margin: 5px 15px;
+}
+.Image-block{
+    display: block;
+    justify-content: center;
+    width:25rem;
+    height: 200px;
+    margin: 6px 0px;
+    text-align: center;
+    background-color:whitesmoke;
+    padding-top: 5px ;
+    border-radius: 10px;
+}
+.block-img{
+    width:90%;
+    height: 150px;
+    overflow: hidden;
+    margin: 0px auto;
+    margin-top: 5px;
+}
+.block-img img{
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
+}
+
+.editImage{
+    position: relative;
+    top:-190px;
+    left:190px;
+    visibility: hidden;
+}
+.editImage img{
+    width: 30px;
+    height: 30px;
+}
+.Image-block:hover{
+    cursor: pointer;
+    .editImage{
+        visibility: visible;
+    }
+}
+

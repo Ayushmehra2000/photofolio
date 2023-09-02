@@ -1,0 +1,144 @@
+/* form css toggle starts from here  */
+.container{
+    width: 80%;
+    margin: 0px auto;
+}
+img:hover{
+    cursor: pointer;
+}
+button:hover{
+    cursor: pointer;
+}
+
+/* form css start from here  */
+.form-container{
+    width: 75%;
+    height: 120px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 5px;
+}
+.form-container-toggle{
+    display: none;
+}
+#albumname{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0px;
+}
+.input-album-name{
+    width:280px;
+    height: 30px;
+    border-radius: 25px;
+    border: none;
+    padding: 0px 10px;
+}
+::placeholder {
+    font-size: 1.2em;
+}
+.form-container button{
+    margin: 0px 10px;
+    width: 80px;
+    height: 30px;
+    color:white;
+    background-color: none;
+    border-radius: 5px;
+    border: none;
+}
+#clear{
+    background-color: red;
+}
+#Create{
+    background-color: blue;
+}
+
+
+
+/* heading-container css start from here  */
+.Heading-container{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+}
+.Heading-container div{
+    display: inline;
+    margin: 5px 20px;
+}
+.form-button button{
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px 20px;
+}
+.AddToAlbum{
+    border: 2px solid blue;
+    background-color: rgba(0, 0, 255, 0.3);
+}
+.Cancel{
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+
+
+/* List css starts from here  */
+#main-container{
+    width: 98vw !important;
+    margin: 0px auto;
+}
+#main-container ul{
+    width: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    
+}
+#main-container ul li {
+    display: inline-block;
+    flex-basis: 20%;
+}
+.folder{
+    display: block;
+    justify-content: center;
+    width:15rem;
+    height: 190px;
+    margin: 3px 12px;
+    text-align: center;
+    background-color:whitesmoke;
+    padding-top: 5px ;
+    border-radius: 10px;
+}
+
+.folder:hover{
+    background-color: wheat;
+    cursor: pointer;
+    .remove{
+        visibility: visible;
+    }
+}
+.folder-img {
+    width:90%;
+    height: 150px;
+    overflow: hidden;
+    margin: 0px auto;
+    margin-top: 5px;
+}
+.folder-img img{
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
+}
+.remove{
+    position: relative;
+    top:-205px;
+    left:110px;
+    font-size:3rem;
+    color: red;
+    visibility: hidden;
+}
+
