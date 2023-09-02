@@ -1,0 +1,73 @@
+#ImageSliderContainer{
+    width: 100vw;
+    height: 100vh;
+    /* border: 2px solid black; */
+    margin: 0px auto;
+    position: absolute;
+    top:0%;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-arrow{
+    width:50px;
+    height: 50px;
+    position: relative;
+    border-radius: 50px;
+    color:white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-arrow:hover{
+    color: black;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+.right-arrow{
+    width:50px;
+    height: 50px;
+    position: relative;  
+    color:white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    border-radius: 50px;
+}
+.right-arrow:hover{
+    color: black;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+.Center-Image{
+    width:700px;
+    height: 450px;
+    position: relative;
+    margin: 0px 30px;
+    
+}
+.cancel-window{
+    width:45px;
+    height: 45px;
+    position: absolute;
+    top:1%;
+    left: 90%;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    color:white;
+}
+.cancel-window:hover{
+    color:red;
+}
+.Center-Image img{
+    width: inherit;
+    height: inherit;
+    z-index: -1;
+    opacity: 1;
+}

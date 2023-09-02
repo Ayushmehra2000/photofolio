@@ -73,23 +73,25 @@
 
 /* imagesList Starts from here  */
 #imagelist-container{
-    width: 100%;
+    width: 95vw;
+    margin: 0px auto;
 }
 #imagelist-container ul{
-    width: 100%;
+    width: inherit;
     display: flex;
     flex-wrap: wrap;
-    overflow-wrap: normal;
+    overflow: hidden;
 }
 #imagelist-container ul li {
     display: inline-block;
+    margin: 5px 15px;
 }
 .Image-block{
     display: block;
     justify-content: center;
-    width:21rem;
-    height: 180px;
-    margin: 3px 10px;
+    width:25rem;
+    height: 200px;
+    margin: 6px 0px;
     text-align: center;
     background-color:whitesmoke;
     padding-top: 5px ;
@@ -104,12 +106,14 @@
 }
 .block-img img{
     object-fit: cover;
-    width: 100%;
+    width: inherit;
+    height: inherit;
 }
+
 .editImage{
     position: relative;
     top:-190px;
-    left:160px;
+    left:190px;
     visibility: hidden;
 }
 .editImage img{
@@ -117,7 +121,9 @@
     height: 30px;
 }
 .Image-block:hover{
+    cursor: pointer;
     .editImage{
         visibility: visible;
     }
 }
+

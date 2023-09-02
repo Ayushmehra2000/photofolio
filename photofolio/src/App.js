@@ -16,6 +16,9 @@ function App() {
   const [toggleBetweenAlbumlistandPhotolist,setToggleBetweenAlbumlistandPhotolist] = useState(false);
   const [selectedAlbum,setSelectedAlbum] = useState(null);
 
+
+  // function for database CURD operations 
+
   const getDataofFolders=()=>{
     const unsub = onSnapshot(collection(db, "folders"), (Snapshot) => {
       const folders = Snapshot.docs.map((doc) => ({
@@ -29,7 +32,7 @@ function App() {
   useEffect(()=>{
     getDataofFolders();
   },[]);
-  
+
   const handleAddAlbum = async (Albumdata)=>{
     const docRef = await addDoc(collection(db, "folders"), Albumdata);
     setAlbums([{id:docRef.id,...Albumdata},...albums]);
@@ -40,6 +43,7 @@ function App() {
     const updatefolder=albums.filter((data)=> data.id !== id);
     setAlbums(updatefolder)
   }
+  
   return (
     <div className="App">
       <header className="App-header">

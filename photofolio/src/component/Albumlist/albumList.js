@@ -1,5 +1,6 @@
 import "../Albumlist/albumlist.css";
 import { useState, useRef, useEffect} from 'react';
+import {TiDelete} from "react-icons/ti";
 
 export default function AlbumList({albums , removeFolder, AddAlbum, togglebtwAlbumandPhoto, selectedAlbum}){
     const [toggle, setToggle] = useState(true);
@@ -54,17 +55,22 @@ export default function AlbumList({albums , removeFolder, AddAlbum, togglebtwAlb
     </div>
     <hr />
     <div id="main-container">
+        <ul>
         {albums.map((data,i)=>{
             return(<>
-            <div className="folder" key={i} onClick={()=>handleSelectedAlbum(data)} >
-               <div>
-                <img src="https://img.icons8.com/?size=512&id=12160&format=png" alt="folder-img" />
-               </div>
-               <h3>{data.name}</h3>
-               <button className="remove" onClick={()=>removeFolder(data.id)}>X</button>
-            </div></>
+            <li key={i}>
+                <div className="folder">
+                    <div className="folder-img" >
+                        <img onClick={()=>handleSelectedAlbum(data)} src="https://img.icons8.com/?size=512&id=12160&format=png" alt="folder-img" />
+                    </div>
+                    <h2>{data.name}</h2>
+                    <div className="remove" onClick={()=>removeFolder(data.id)}><TiDelete /></div>
+                </div>
+            </li>
+            </>
             );
         })}
+        </ul>
     </div>
     </>);
 }
